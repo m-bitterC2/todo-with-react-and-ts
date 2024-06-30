@@ -3,7 +3,7 @@ import "./TodoList.css";
 
 type Props = {
   todos: Todo[];
-  completeTodo: (id: number) => void;
+  completeTodo: (id: string) => void;
 };
 
 const TodoList = ({ todos, completeTodo }: Props) => {

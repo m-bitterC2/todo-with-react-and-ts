@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import TodoList from "./component/TodoList";
+import { v4 as uuidv4 } from "uuid";
 
 export type Todo = {
-  id: number;
+  id: string;
   text: string;
 };
 
@@ -13,7 +14,7 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState<Todo[]>([
     {
-      id: 0,
+      id: uuidv4(),
       text: "ex1",
     },
   ]);
@@ -41,11 +42,11 @@ function App() {
 
   const addTodo = () => {
     if (!inputText) return;
-    setTodos([{ id: todos.length, text: inputText }, ...todos]);
+    setTodos([{ id: uuidv4(), text: inputText }, ...todos]);
     setInputText("");
   };
 
-  const completeTodo = (id: number) => {
+  const completeTodo = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
