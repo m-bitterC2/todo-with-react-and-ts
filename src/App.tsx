@@ -15,7 +15,7 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([
     {
       id: uuidv4(),
-      text: "ex1",
+      text: "技術書を１冊読む",
     },
   ]);
 
